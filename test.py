@@ -1,11 +1,11 @@
 import pytest
 import requests
 
+
 @pytest.mark.parametrize("user_id, expected_email", [
     (2, "janet.weaver@reqres.in"),
 ])
 def test_user_data(user_id, expected_email):
-    # url = f"https://reqres.in/api/users/{user_id}"
     url = f"http://0.0.0.0:8000/api/users/{user_id}"
 
     response = requests.get(url)
